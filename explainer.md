@@ -39,3 +39,17 @@ with a specified
 [format](https://www.semantic-mediawiki.org/wiki/Serialization_%28JSON%29).
 A query result can also be viewed in pretty print form 
 by removing the `format` parameter from the query.
+
+
+## Examples of queries
+
+Here are some examples of queries into the CSDMS model repository.
+
+| Description | Query URL |
+|-------------|-----------|
+| List all models created by the user with the last name `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json) |
+| List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
+| List models written by user `Tucker`, including the model DOI in the results | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?DOI+model&format=json |
+| List the first five models written by user `Tucker` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?limit=5&format=json |
+| List five models written in `C`, starting at item 10 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&#124;?DOI+model&#124;limit=5&#124;offset=10 |
+| Search for a nonexistent `Programming language` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
