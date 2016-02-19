@@ -69,6 +69,22 @@ Here's this condition in a query:
 * http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json
 
 
+## Model keywords
+
+Model keywords are defined not by SMW,
+but by the developer of the model,
+so they may be inconsistent,
+and vary from model to model.
+For example, the condition
+```
+[[Model keywords::basin]]
+```
+can be used to find all models that have the keyword `basin`.
+Use this condition in a query:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model+keywords::basin]]&format=jsonfm
+
+
 ## Advanced queries
 
 Conditions listed in serial are combined with a logical `AND`.
@@ -107,22 +123,6 @@ The API call:
 
 See [Help:Inline_queries](https://www.semantic-mediawiki.org/wiki/Help:Inline_queries)
 for more information on building query strings with several properties.
-
-
-## Model keywords
-
-Model keywords are defined not by SMW,
-but by the developer of the model,
-so they may be inconsistent,
-and vary from model to model.
-For example, the condition
-```
-[[Model keywords::basin]]
-```
-can be used to find all models that have the keyword `basin`.
-Use this condition in a query:
-
-* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model+keywords::basin]]&format=jsonfm
 
 
 ## Testing queries
