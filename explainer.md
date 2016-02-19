@@ -41,6 +41,25 @@ A query result can also be viewed in pretty print form
 by removing the `format` parameter from the query.
 
 
+## Advanced queries
+
+Conditions listed in serial are combined with a logical `AND`.
+For example,
+the two conditions
+```
+[[Programming language::C++]]
+[[Last name::Tucker]]
+```
+can be combined into a query like so:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C%2B%2B]][[Last+name::Tucker]]&format=jsonfm
+
+Note that spaces in the properties need to be urlencoded
+(here, with `+`),
+as well as the plus signs in `C++`
+(here, with `%2B`)!
+
+
 ## Model keywords
 
 Model keywords are defined not by SMW,
