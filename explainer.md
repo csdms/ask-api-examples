@@ -41,6 +41,15 @@ A query result can also be viewed in pretty print form
 by removing the `format` parameter from the query.
 
 
+## Testing queries
+
+Test queries with the `Special:Ask` page on the CSDMS portal:
+http://csdms.colorado.edu/wiki/Special:Ask.
+In addition to interactively running queries,
+the `Special:Ask` page shows the raw query string,
+which can be helpful for building new queries programmatically.
+
+
 ## Examples of queries
 
 Here are some examples of queries into the CSDMS model repository.
