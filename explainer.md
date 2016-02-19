@@ -87,6 +87,27 @@ Note that spaces in the properties need to be urlencoded
 as well as the plus signs in `C++`
 (here, with `%2B`)!
 
+See [Help:Selecting_pages](https://www.semantic-mediawiki.org/wiki/Help:Selecting_pages)
+for examples of disjunctions and comparisons of conditionals.
+
+Additional data can be returned with a query result
+by specifying additional properties in query string.
+Separate additional properties with the pipe and question mark characters `|?`.
+For example,
+to find all models written by the user with the last name "Hutton",
+and also include, if available,
+the DOI and the source code repository for each model found,
+use the query string:
+```
+[[Last+name::Hutton]]|?DOI+model|?Source+web+address
+```
+The API call:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]|?DOI+model|?Source+web+address&format=jsonfm
+
+See [Help:Inline_queries](https://www.semantic-mediawiki.org/wiki/Help:Inline_queries)
+for more information on building query strings with several properties.
+
 
 ## Model keywords
 
@@ -122,15 +143,16 @@ Here are some examples of queries into the CSDMS model repository.
 | List all models created by the user with the last name `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json) |
 | List all models written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
 | List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]][[Programming%20language::C]]&format=json |
-| List models written by user `Tucker`, including the model DOI in the results | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?DOI+model&format=json |
 | List the first five models written by user `Tucker` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?limit=5&format=json |
 | List five models written in `C`, starting at item 10 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&#124;?DOI+model&#124;limit=5&#124;offset=10 |
 | Search for models written a nonexistent programming language to see an error message | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
 | Find all terrestrial models | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Category:Terrestrial]]&format=jsonfm |
 | Locate a particular model by name | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json |
+| Find all models written by user `Hutton`, including (if available) the DOI and the source code repository for each model | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm |
 
 
 ## Additional references
 
 * Properties: https://www.semantic-mediawiki.org/wiki/Help:Properties_and_types
 * Results formats: https://www.semantic-mediawiki.org/wiki/Help:Result_formats
+* Categories: https://meta.wikimedia.org/wiki/Help:Category
