@@ -41,6 +41,34 @@ A query result can also be viewed in pretty print form
 by removing the `format` parameter from the query.
 
 
+## Categories
+
+[Categories](https://www.semantic-mediawiki.org/wiki/Help:Editing) 
+are tags added to a page
+to aid in classification.
+Like properties,
+categories can be queried.
+For example,
+the condition
+```
+[[Category:Terrestrial]]
+```
+will list all terrestrial models the CSDMS model metadata repository.
+Unlike properties,
+only one colon `:` separates the category name and value.
+
+`Model` is itself a category in the CSDMS wiki.
+Search for a particular model by name:
+```
+[[Model:HydroTrend]]
+```
+The category value is case-sensitive;
+e.g., `hydrotrend` wouldn't match a model.
+Here's this condition in a query:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json
+
+
 ## Advanced queries
 
 Conditions listed in serial are combined with a logical `AND`.
@@ -99,6 +127,7 @@ Here are some examples of queries into the CSDMS model repository.
 | List five models written in `C`, starting at item 10 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&#124;?DOI+model&#124;limit=5&#124;offset=10 |
 | Search for models written a nonexistent programming language to see an error message | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
 | Find all terrestrial models | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Category:Terrestrial]]&format=jsonfm |
+| Locate a particular model by name | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json |
 
 
 ## Additional references
