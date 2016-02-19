@@ -151,6 +151,16 @@ Here are some examples of queries into the CSDMS model repository.
 | Find all models written by user `Hutton`, including (if available) the DOI and the source code repository for each model | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm |
 
 
+## Unanswered questions
+
+1. How does one get a list of all model properties used in the CSDMS
+   wiki?
+1. How can one show the data for *all* the properties of a particular
+   model?
+1. How can one get *all* the results of a query in a single JSON,
+   without pagination?
+
+
 ## Additional references
 
 * Properties: https://www.semantic-mediawiki.org/wiki/Help:Properties_and_types
