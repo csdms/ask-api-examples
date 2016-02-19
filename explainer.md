@@ -6,13 +6,13 @@ to store and query information.
 SMW has an [API](https://www.semantic-mediawiki.org/w/api.php) with several actions.
 Here, we'll focus on the `ask` action,
 and the [Ask API](https://www.semantic-mediawiki.org/wiki/Ask_API),
-to query metadata from the CSDMS model repository.
+to query metadata from the CSDMS model metadata repository.
 
 The base URL for any call to the SMW API on the CSDMS portal is
 http://csdms.colorado.edu/mediawiki/api.php.
 
 
-## Basic queries
+## Query syntax
 
 The `ask` action supports one parameter, `query`,
 which takes an urlencoded string.
@@ -48,8 +48,16 @@ Here are some examples of queries into the CSDMS model repository.
 | Description | Query URL |
 |-------------|-----------|
 | List all models created by the user with the last name `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json) |
-| List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
+| List all models written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
+| List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]][[Programming%20language::C]]&format=json |
 | List models written by user `Tucker`, including the model DOI in the results | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?DOI+model&format=json |
 | List the first five models written by user `Tucker` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;?limit=5&format=json |
 | List five models written in `C`, starting at item 10 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&#124;?DOI+model&#124;limit=5&#124;offset=10 |
-| Search for a nonexistent `Programming language` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
+| Search for models written a nonexistent programming language to see an error message | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
+| Find all terrestrial models | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Category:Terrestrial]]&format=jsonfm |
+
+
+## Additional references
+
+* Properties: https://www.semantic-mediawiki.org/wiki/Help:Properties_and_types
+* Results formats: https://www.semantic-mediawiki.org/wiki/Help:Result_formats
