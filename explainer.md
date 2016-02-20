@@ -41,10 +41,34 @@ A query result can also be viewed in pretty print form
 by removing the `format` parameter from the query.
 
 
+## Properties
+
+[Properties](https://www.semantic-mediawiki.org/wiki/Help:Properties_and_types)
+are the basic data type of SMW.
+They consist of a name and a value,
+both of which are case-sensitive.
+
+A defined set of properties are added to each model
+by the CSDMS WikiSysop.
+For example,
+`Programming language` is a property of models
+in the CSDMS model metadata repository.
+
+**Note:**
+I desire a query that returns all the properties of a model,
+but I haven't figured out how to make it.
+It's on my list of unanswered questions below.
+In lieu of a programmatic query,
+I've been looking at the model's wiki source;
+for example, the
+[Wikitext for HydroTrend](http://csdms.colorado.edu/mediawiki/index.php?title=Model:HydroTrend&action=edit).
+
+
 ## Categories
 
 [Categories](https://www.semantic-mediawiki.org/wiki/Help:Editing) 
 are tags added to a page
+by the CSDMS WikiSysop
 to aid in classification.
 Like properties,
 categories can be queried.
@@ -71,8 +95,8 @@ Here's this condition in a query:
 
 ## Model keywords
 
-Model keywords are defined not by SMW,
-but by the developer of the model,
+Model keywords are defined not by SMW or the CSDMS WikiSysop,
+but by the developer of a model,
 so they may be inconsistent,
 and vary from model to model.
 For example, the condition
