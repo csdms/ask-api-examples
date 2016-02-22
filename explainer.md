@@ -162,17 +162,49 @@ which can be helpful for building new queries programmatically.
 
 Here are some examples of queries into the CSDMS model repository.
 
-| Description | Query URL |
-|-------------|-----------|
-| List all models created by the user with the last name `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json) |
-| List all models written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
-| List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]][[Programming%20language::C]]&format=json |
-| List the first three models written by user `Tucker` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&#124;limit=3&format=json |
-| List five models written in `C`, starting at item 20 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&#124;limit=5&#124;offset=20 |
-| Search for models written a nonexistent programming language to see an error message | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
-| Find all terrestrial models | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Category:Terrestrial]]&format=jsonfm |
-| Locate a particular model by name | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json |
-| Find all models written by user `Hutton`, including (if available) the DOI and the source code repository for each model | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm |
+<table><thead>
+<tr>
+<th>Description</th>
+<th>Query URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>List all models created by the user with the last name <code>Tucker</code></td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json</a></td>
+</tr>
+<tr>
+<td>List all models written in <code>C</code></td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json</a></td>
+</tr>
+<tr>
+<td>List all models from user <code>Tucker</code> written in <code>C</code></td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Tucker]][[Programming%20language::C]]&amp;format=json</a></td>
+</tr>
+<tr>
+<td>List the first three models written by user <code>Tucker</code></td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D&#124;limit=3&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Tucker]]|limit=3&amp;format=json</a></td>
+</tr>
+<tr>
+<td>List five models written in <code>C</code>, starting at item 20 from the full list</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming+language::C%5D%5D&#124;limit=5&#124;offset=20">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Programming+language::C]]|limit=5|offset=20</a></td>
+</tr>
+<tr>
+<td>Search for models written a nonexistent programming language to see an error message</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming+language::xxyyzz%5D%5D&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Programming+language::xxyyzz]]&amp;format=jsonfm</a></td>
+</tr>
+<tr>
+<td>Find all terrestrial models</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BCategory:Terrestrial%5D%5D&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Category:Terrestrial]]&amp;format=jsonfm</a></td>
+</tr>
+<tr>
+<td>Locate a particular model by name</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BModel:HydroTrend%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Model:HydroTrend]]&amp;format=json</a></td>
+</tr>
+<tr>
+<td>Find all models written by user <code>Hutton</code>, including (if available) the DOI and the source code repository for each model</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Hutton%5D%5D&#124;?DOI+model&#124;?Source+web+address&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm</a></td>
+</tr>
+</tbody></table>
 
 
 ## Unanswered questions
