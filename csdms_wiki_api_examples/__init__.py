@@ -1,6 +1,7 @@
 """Examples of using the Semantic MediaWiki Ask API to query the
 CSDMS model metadata repository.
 """
+import os
 import urllib
 
 
@@ -14,6 +15,13 @@ def call_api(query='[[Model:HydroTrend]]'):
     return fp.read()
 
 
-def write_file(json_str, file_name):
-    with open(file_name + '.json', 'w') as fp:
+def write_file(json_str, base_file_name):
+    with open(base_file_name + '.json', 'w') as fp:
         fp.write(json_str)
+
+
+def make_query(query, file_name):
+    r = call_api(query)
+    base_file_name, ext = os.path.splitext(file_name)
+    write_file(r, base_file_name)
+    return r
