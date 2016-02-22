@@ -167,12 +167,12 @@ Here are some examples of queries into the CSDMS model repository.
 | List all models created by the user with the last name `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json) |
 | List all models written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json |
 | List all models from user `Tucker` written in `C` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]][[Programming%20language::C]]&format=json |
-| List the first five models written by user `Tucker` | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]|limit=5&format=json |
-| List five models written in `C`, starting at item 20 from the full list | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]|limit=5|offset=20 |
+| List the first three models written by user `Tucker` | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]|limit=3&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]|limit=3&format=json) |
+| List five models written in `C`, starting at item 20 from the full list | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]|limit=5|offset=20](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]|limit=5|offset=20) |
 | Search for models written a nonexistent programming language to see an error message | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::xxyyzz]]&format=jsonfm |
 | Find all terrestrial models | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Category:Terrestrial]]&format=jsonfm |
 | Locate a particular model by name | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model:HydroTrend]]&format=json |
-| Find all models written by user `Hutton`, including (if available) the DOI and the source code repository for each model | http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]|?DOI+model|?Source+web+address&format=jsonfm |
+| Find all models written by user `Hutton`, including (if available) the DOI and the source code repository for each model | [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]|?DOI+model|?Source+web+address&format=jsonfm](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Hutton]]|?DOI+model|?Source+web+address&format=jsonfm) |
 
 
 ## Unanswered questions
