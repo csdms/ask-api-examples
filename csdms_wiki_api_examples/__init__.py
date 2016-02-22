@@ -1,3 +1,6 @@
+"""Examples of using the Semantic MediaWiki Ask API to query the
+CSDMS model metadata repository.
+"""
 import urllib
 
 
