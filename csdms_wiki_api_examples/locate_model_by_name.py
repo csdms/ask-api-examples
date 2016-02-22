@@ -1,10 +1,8 @@
-"""Queries the CSDMS model repository for models written by the user
-with the last name 'Tucker'.
-"""
+"""Locate a model by name using the Model category."""
 from csdms_wiki_api_examples import make_query
 
 
-query = '[[Last name::Tucker]]'
+query = '[[Model:HydroTrend]]'
 
 
 def main():

@@ -1,10 +1,8 @@
-"""Queries the CSDMS model repository for models written by the user
-with the last name 'Tucker'.
-"""
+"""Query for a nonexistent language to see the resulting error message."""
 from csdms_wiki_api_examples import make_query
 
 
-query = '[[Last name::Tucker]]'
+query = '[[Programming language::xxyyzz]]'
 
 
 def main():

@@ -1,10 +1,10 @@
-"""Queries the CSDMS model repository for models written by the user
-with the last name 'Tucker'.
+"""List five models written in C, starting at item 20 from the full
+list.
 """
 from csdms_wiki_api_examples import make_query
 
 
-query = '[[Last name::Tucker]]'
+query = '[[Programming language::Python]]|limit=5|offset=20'
 
 
 def main():

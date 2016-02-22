@@ -1,10 +1,9 @@
-"""Queries the CSDMS model repository for models written by the user
-with the last name 'Tucker'.
-"""
+"""Queries the CSDMS model repository for three models written by user
+'Tucker'."""
 from csdms_wiki_api_examples import make_query
 
 
-query = '[[Last name::Tucker]]'
+query = '[[Last name::Tucker]]|limit=3'
 
 
 def main():
