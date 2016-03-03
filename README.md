@@ -1,4 +1,4 @@
-# csdms-wiki-api-examples
+# ask-api-examples
 
 Examples of using the Sematic MediaWiki 
 [Ask API](https://www.semantic-mediawiki.org/wiki/Ask_API) 
