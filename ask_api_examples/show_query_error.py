@@ -1,5 +1,5 @@
 """Query for a nonexistent language to see the resulting error message."""
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Programming language::xxyyzz]]'

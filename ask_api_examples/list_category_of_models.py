@@ -1,5 +1,5 @@
 """Lists a category of models from the CSDMS model metadata repository."""
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Category:Terrestrial]]|limit=10000'

@@ -2,7 +2,7 @@
 source code repository for each model.
 
 """
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Last name::Hutton]]|?DOI model|?Source web address'

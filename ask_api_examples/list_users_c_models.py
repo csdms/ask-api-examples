@@ -1,5 +1,5 @@
 """Queries the CSDMS model repository for C models written by user 'Tucker'."""
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Programming language::C]][[Last name::Tucker]]'

@@ -1,7 +1,7 @@
 """Queries the CSDMS model repository for models written by the user
 with the last name 'Tucker'.
 """
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Last name::Tucker]]'

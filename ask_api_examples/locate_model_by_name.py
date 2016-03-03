@@ -1,5 +1,5 @@
 """Locate a model by name using the Model category."""
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Model:HydroTrend]]'

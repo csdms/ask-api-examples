@@ -1,6 +1,6 @@
 """Queries the CSDMS model repository for three models written by user
 'Tucker'."""
-from csdms_wiki_api_examples import make_query
+from ask_api_examples import make_query
 
 
 query = '[[Last name::Tucker]]|limit=3'
