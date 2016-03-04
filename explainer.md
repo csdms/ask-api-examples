@@ -111,6 +111,27 @@ Use this condition in a query:
 
 ## Advanced queries
 
+The Ask API supports a number of advanced query options.
+
+### Limiting the displayed results
+
+By default,
+only the first 10 matches to a query are returned.
+To raise this limit,
+set the `limit` display property to a larger number.
+For example, in applying this to the example above
+```
+[[Programming language::C]]|limit=10000
+```
+we see that there are (at the time of writing this article)
+actually 100 models written in C.
+Here's the query:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]|limit=10000&format=jsonfm
+
+
+### Combining conditions
+
 Conditions listed in serial are combined with a logical `AND`.
 For example,
 the two conditions
@@ -129,6 +150,9 @@ as well as the plus signs in `C++`
 
 See [Help:Selecting_pages](https://www.semantic-mediawiki.org/wiki/Help:Selecting_pages)
 for examples of disjunctions and comparisons of conditionals.
+
+
+### Specifying additional data
 
 Additional data can be returned with a query result
 by specifying additional properties in query string.
@@ -177,6 +201,10 @@ Here are some examples of queries into the CSDMS model repository.
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json</a></td>
 </tr>
 <tr>
+<td>Really list all models written in <code>C</code></td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::C%5D%5D&#124;limit=10000&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]|limit=10000&format=json</a></td>
+</tr>
+<tr>
 <td>List all models from user <code>Tucker</code> written in <code>C</code></td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Tucker]][[Programming%20language::C]]&amp;format=json</a></td>
 </tr>
@@ -213,8 +241,6 @@ Here are some examples of queries into the CSDMS model repository.
    wiki?
 1. How can one show the data for *all* the properties of a particular
    model?
-1. How can one get *all* the results of a query in a single JSON,
-   without pagination?
 
 
 ## Additional references
