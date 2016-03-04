@@ -125,6 +125,8 @@ For example, in applying this to the example above
 ```
 we see that there are (at the time of writing this article)
 actually 100 models written in C.
+Note the use of the pipe character `|` to set off
+the display property from the condition.
 Here's the query:
 
 * http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]|limit=10000&format=jsonfm
