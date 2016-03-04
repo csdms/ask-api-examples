@@ -150,6 +150,20 @@ Note that spaces in the properties need to be urlencoded
 as well as the plus signs in `C++`
 (here, with `%2B`)!
 
+Conditions can support multiple values
+combined with a logical `OR` operation
+by using the double pipe `||` operator.
+For example,
+to list models written in either Fortran 77 or Fortran 90,
+use the condition
+```
+[[Programming language::Fortran77||Fortran90]]
+```
+in a query:
+
+* http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::Fortran77||Fortran90]]|limit=10000&format=jsonfm
+
+
 See [Help:Selecting_pages](https://www.semantic-mediawiki.org/wiki/Help:Selecting_pages)
 for examples of disjunctions and comparisons of conditionals.
 
@@ -195,27 +209,27 @@ Here are some examples of queries into the CSDMS model repository.
 </tr>
 </thead><tbody>
 <tr>
-<td>List all models created by the user with the last name <code>Tucker</code></td>
+<td>List all models created by the user with the last name Tucker</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Last+name::Tucker]]&format=json</a></td>
 </tr>
 <tr>
-<td>List all models written in <code>C</code></td>
+<td>List all models written in C</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]&format=json</a></td>
 </tr>
 <tr>
-<td>Really list all models written in <code>C</code></td>
+<td>Really list all models written in C</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::C%5D%5D&#124;limit=10000&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::C]]|limit=10000&format=json</a></td>
 </tr>
 <tr>
-<td>List all models from user <code>Tucker</code> written in <code>C</code></td>
+<td>List all models from user Tucker written in C</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D%5B%5BProgramming%20language::C%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Tucker]][[Programming%20language::C]]&amp;format=json</a></td>
 </tr>
 <tr>
-<td>List the first three models written by user <code>Tucker</code></td>
+<td>List the first three models written by user Tucker</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Tucker%5D%5D&#124;limit=3&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Tucker]]|limit=3&amp;format=json</a></td>
 </tr>
 <tr>
-<td>List five models written in <code>C</code>, starting at item 20 from the full list</td>
+<td>List five models written in C, starting at item 20 from the full list</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming+language::C%5D%5D&#124;limit=5&#124;offset=20">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Programming+language::C]]|limit=5|offset=20</a></td>
 </tr>
 <tr>
@@ -231,7 +245,11 @@ Here are some examples of queries into the CSDMS model repository.
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BModel:HydroTrend%5D%5D&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Model:HydroTrend]]&amp;format=json</a></td>
 </tr>
 <tr>
-<td>Find all models written by user <code>Hutton</code>, including (if available) the DOI and the source code repository for each model</td>
+<td>List all models written in Fortran 77 or Fortran 90</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BProgramming%20language::Fortran77&#124;&#124;Fortran90%5D%5D&#124;limit=10000&amp;format=json">http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming%20language::Fortran77||Fortran90]]|limit=10000&format=json</a></td>
+</tr>
+<tr>
+<td>Find all models written by user Hutton, including (if available) the DOI and the source code repository for each model</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Hutton%5D%5D&#124;?DOI+model&#124;?Source+web+address&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm</a></td>
 </tr>
 </tbody></table>
