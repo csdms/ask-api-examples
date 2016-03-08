@@ -252,6 +252,10 @@ Here are some examples of queries into the CSDMS model repository.
 <td>Find all models written by user Hutton, including (if available) the DOI and the source code repository for each model</td>
 <td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BLast+name::Hutton%5D%5D&#124;?DOI+model&#124;?Source+web+address&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Last+name::Hutton]]&#124;?DOI+model&#124;?Source+web+address&format=jsonfm</a></td>
 </tr>
+<tr>
+<td>List all models (Category technique)</td>
+<td><a href="http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=%5B%5BCategory:Terrestrial||Coastal||Marine||Hydrology||Carbonate||Climate%5D%5D&#124;limit=10000&amp;format=jsonfm">http://csdms.colorado.edu/mediawiki/api.php?action=ask&amp;query=[[Category:Terrestrial&#124;&#124;Coastal&#124;&#124;Marine&#124;&#124;Hydrology&#124;&#124;Carbonate&#124;&#124;Climate]]|limit=10000&amp;format=jsonfm</a></td>
+</tr>
 </tbody></table>
 
 
