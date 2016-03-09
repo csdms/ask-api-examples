@@ -1,14 +1,16 @@
 # Querying the CSDMS Website
 
-The [CSDMS portal](http://csdms.colorado.edu/wiki/Main_Page) uses
 [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) (SMW)
-to store and query information.
-SMW has an [API](https://www.semantic-mediawiki.org/w/api.php) with several actions.
+is the knowledge management system used on the
+[CSDMS website](http://csdms.colorado.edu/wiki/Main_Page).
+SMW has an [API](https://www.semantic-mediawiki.org/w/api.php)
+with several actions, allowing users
+to add, edit, and query information.
 Here, we'll focus on the `ask` action,
 and the [Ask API](https://www.semantic-mediawiki.org/wiki/Ask_API),
 to query metadata from the CSDMS model metadata repository.
 
-The base URL for any call to the SMW API on the CSDMS portal is
+The base URL for any call to the SMW API on the CSDMS website is
 http://csdms.colorado.edu/mediawiki/api.php.
 
 
@@ -26,10 +28,11 @@ For example, the condition
 ```
 would query for all models with the `Programming language` property
 that have a value of `C`.
-Note that the brackets `[]` and the colons `::` in the condition
+Note that the colons `::` in the condition
 are literal in the query language,
 and cannot be urlencoded.
-Spaces, however, should be encoded with `%20` or `+`.
+Spaces, however, should be encoded with `%20` or `+`,
+while brackets `[]` may optionally be encoded.
 
 Try this condition in a query:
 * [http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&format=json](http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::C]]&format=json)
@@ -97,13 +100,13 @@ Here's this condition in a query:
 
 Model keywords are defined not by SMW or the CSDMS WikiSysop,
 but by the developer of a model,
-so they may be inconsistent,
-and vary from model to model.
+so they may inconsistently
+vary from model to model.
 For example, the condition
 ```
 [[Model keywords::basin]]
 ```
-can be used to find all models that have the keyword `basin`.
+can be used to find all models that contain the keyword `basin`.
 Use this condition in a query:
 
 * http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Model+keywords::basin]]&format=jsonfm
@@ -151,15 +154,14 @@ as well as the plus signs in `C++`
 (here, with `%2B`)!
 
 Conditions can support multiple values
-combined with a logical `OR` operation
-by using the double pipe `||` operator.
+combined with a logical `OR` operation using the double pipe `||` operator.
 For example,
 to list models written in either Fortran 77 or Fortran 90,
 use the condition
 ```
 [[Programming language::Fortran77||Fortran90]]
 ```
-in a query:
+in a query this is:
 
 * http://csdms.colorado.edu/mediawiki/api.php?action=ask&query=[[Programming+language::Fortran77||Fortran90]]|limit=10000&format=jsonfm
 
